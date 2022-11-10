@@ -87,6 +87,6 @@ def create_contacts(class_name, n):
                     company = person.company(),
                     business_phone = person.phone_number()))
 
-print(create_contacts(BaseContact, 3))
+create_contacts(BaseContact, 3)
 
 
