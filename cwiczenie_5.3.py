@@ -76,7 +76,7 @@ def create_contacts(class_name, n):
                     last_name = person.last_name(),
                     phone_number = person.phone_number(),
                     email = person.email()))    
-            return cards            
+            return cards         
         elif class_name == BusinessContact:
             cards.append(
                 BusinessContact(
@@ -89,6 +89,6 @@ def create_contacts(class_name, n):
                     business_phone = person.phone_number()))
             return cards
 
-print(create_contacts(BaseContact, 3))
+create_contacts(BaseContact, 3)
 
 
