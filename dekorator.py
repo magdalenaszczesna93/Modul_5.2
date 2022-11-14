@@ -25,15 +25,15 @@ class Contact:
         self.last_name = last_name
         self.phone_number = phone_number
         self.email = email  
-    __repr__ = __str__
-  
+    __repr__ = __str__  
+    
 def card():
-    list=[]
-    for i in range(1000):
-        list.append(Contact(
-            first_name = fake.first_name(), 
-            last_name = fake.last_name(), 
-            phone_number = fake.phone_number(), 
-            email = fake.email()))
-    return list
-print(card())
+        list=[]
+        for i in range(1000):
+            list.append(Contact(
+                first_name = fake.first_name(), 
+                last_name = fake.last_name(), 
+                phone_number = fake.phone_number(), 
+                email = fake.email()))
+        return list
+card()
