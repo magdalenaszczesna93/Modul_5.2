@@ -14,14 +14,26 @@ def say_hello():
     
 print(say_hello())
 
+class Contact:
+    def __init__(self, first_name, last_name, phone_number, email):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.phone_number = phone_number
+        self.email = email
+    def __str__(self, first_name, last_name, phone_number, email):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.phone_number = phone_number
+        self.email = email  
+    __repr__ = __str__
+  
 def card():
     list=[]
     for i in range(1000):
-        list.append(name = fake.name(
-            first_name = fake.first_name, 
-            last_name = fake.last_name, 
-            phone_number = fake.phone_number, 
-            email = fake.email))
+        list.append(Contact(
+            first_name = fake.first_name(), 
+            last_name = fake.last_name(), 
+            phone_number = fake.phone_number(), 
+            email = fake.email()))
     return list
-
 print(card())
