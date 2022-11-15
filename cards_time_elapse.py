@@ -1,3 +1,14 @@
+#Ćwiczenie
+#Napisz funkcję, która tworzy listę zawierającą 1000 wizytówek z losowymi danymi 
+# (użyj biblioteki faker, którą opisywaliśmy w tym module).
+
+#Następnie stwórz dekorator, który zmierzy czas wykonywania tej operacji. 
+# Niech udekorowana funkcja wyświetla czas obliczeń (w sekundach) po ich zakończeniu.
+
+#Wskazówka. W Pythonie do operacji na datach i czasie wykorzystuje się moduł datetime. 
+# Zapoznaj się z jego dokumentacją.
+
+
 from faker import Faker
 fake = Faker()
 
