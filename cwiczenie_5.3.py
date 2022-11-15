@@ -7,14 +7,6 @@ class BaseContact:
         self.last_name = last_name
         self.phone_number = phone_number
         self.email = email
-
-    def __str__(self, first_name, last_name, phone_number, email):
-        self.first_name = first_name
-        self.last_name = last_name
-        self.phone_number = phone_number
-        self.email = email  
-
-    __repr__ = __str__
   
     def contact(self):
         return f'Wybiaram numer {self.phone_number} i dzownię do {self.first_name} {self.last_name}'
@@ -35,14 +27,6 @@ class BusinessContact(BaseContact):
         self.job = job
         self.company = company
         self.business_phone = business_phone
-
-    def __str__(self, job, company_name, business_phone, *args, **kwargs):
-        super().__str__(*args, **kwargs)
-        self.job = job
-        self.company_name = company_name
-        self.business_phone = business_phone
-
-    __repr__ = __str__
   
     def contact(self):
         return f'Wybiaram numer slozbowy {self.business_phone} i dzownię do {self.first_name} {self.last_name}'
@@ -68,7 +52,7 @@ print(April.label_lenght)
 #czemu to nie działa??
 def create_contacts(class_name, n):
     cards=[]
-    for _ in range(n):  
+    for i in range(n):  
         if class_name == BaseContact:
             cards.append(
                 BaseContact(
@@ -76,7 +60,7 @@ def create_contacts(class_name, n):
                     last_name = person.last_name(),
                     phone_number = person.phone_number(),
                     email = person.email()))    
-            return cards         
+            return f'{cards}'         
         elif class_name == BusinessContact:
             cards.append(
                 BusinessContact(
@@ -89,6 +73,6 @@ def create_contacts(class_name, n):
                     business_phone = person.phone_number()))
             return cards
 
-create_contacts(BaseContact, 3)
+print(create_contacts(BaseContact, 3))
 
 
