@@ -7,6 +7,9 @@ class BaseContact:
         self.last_name = last_name
         self.phone_number = phone_number
         self.email = email
+    def __str__ (self):
+        return f'{self.first_name} {self.last_name} {self.phone_number} {self.email}'
+    __repr__ = __str__
   
     def contact(self):
         return f'Wybiaram numer {self.phone_number} i dzownię do {self.first_name} {self.last_name}'
@@ -27,6 +30,9 @@ class BusinessContact(BaseContact):
         self.job = job
         self.company = company
         self.business_phone = business_phone
+    def __str__ (self):
+        return f'{self.first_name} {self.last_name} {self.phone_number} {self.email} {self.job} {self.company} {self.business_phone}'
+    __repr__ = __str__
   
     def contact(self):
         return f'Wybiaram numer slozbowy {self.business_phone} i dzownię do {self.first_name} {self.last_name}'
@@ -50,9 +56,9 @@ print(Susan.label_lenght)
 print(April.label_lenght)
 
 #czemu to nie działa??
-def create_contacts(class_name, n):
+def create_contacts(class_name, i):
     cards=[]
-    for i in range(n):  
+    for i in range(i):  
         if class_name == BaseContact:
             cards.append(
                 BaseContact(
@@ -74,5 +80,5 @@ def create_contacts(class_name, n):
             return cards
 
 print(create_contacts(BaseContact, 3))
-
+print(create_contacts(BusinessContact, 2))
 
