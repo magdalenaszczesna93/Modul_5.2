@@ -1,3 +1,25 @@
+#Zadanie: wizytówki 
+#Dysponujesz już całkiem rozbudowanym programem do obsługi wizytówek. 
+# Po dodaniu kilku elementów wyślij go Mentorowi.
+
+#***Używając dziedziczenia, rozdziel podstawową klasę wizytówki na dwie osobne: 
+# pierwsza (BaseContact) powinna przechowywać podstawowe dane kontaktowe takie jak 
+# imię, nazwisko, telefon, adres e-mail. 
+# Za pomocą kolejnej klasy (BusinessContact) rozszerz klasę bazową 
+# o przechowywanie informacji związanych z pracą danej osoby 
+# – stanowisko, nazwa firmy, telefon służbowy.
+
+#***Oba typy wizytówek, powinny oferować metodę contact(), która wyświetli na konsoli komunikat w postaci 
+# “Wybieram numer +48 123456789 i dzwonię do Jan Kowalski”. 
+# Wizytówka firmowa powinna wybierać służbowy numer telefonu, a wizytówka bazowa prywatny.
+
+#***Oba typy wizytówek powinny mieć dynamiczny atrybut label_length, 
+# który zwraca długość imienia i nazwiska danej osoby.
+
+#***Stwórz funkcję create_contacts, która będzie potrafiła komponować losowe wizytówki. 
+# Niech ta funkcja przyjmuje dwa parametry: rodzaj wizytówki oraz ilość. 
+# Wykorzystaj bibliotekę faker do generowania danych.
+
 from faker import Faker
 person = Faker()
 
@@ -55,7 +77,6 @@ print(BusinessContact.contact(Katherine))
 print(Susan.label_lenght)
 print(April.label_lenght)
 
-#czemu to nie działa??
 def create_contacts(class_name, i):
     cards=[]
     for i in range(i):  
@@ -65,8 +86,7 @@ def create_contacts(class_name, i):
                     first_name = person.first_name(),
                     last_name = person.last_name(),
                     phone_number = person.phone_number(),
-                    email = person.email()))    
-            return f'{cards}'         
+                    email = person.email()))            
         elif class_name == BusinessContact:
             cards.append(
                 BusinessContact(
@@ -77,7 +97,7 @@ def create_contacts(class_name, i):
                     job = person.job(),
                     company = person.company(),
                     business_phone = person.phone_number()))
-            return cards
+    return cards
 
 print(create_contacts(BaseContact, 3))
 print(create_contacts(BusinessContact, 2))
