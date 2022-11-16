@@ -59,11 +59,6 @@ class BusinessContact(BaseContact):
     def contact(self):
         return f'Wybiaram numer slozbowy {self.business_phone} i dzownię do {self.first_name} {self.last_name}'
     
-    @property
-    def label_lenght(self):
-        return len(f"{self.first_name} {self.last_name}")
-    
-
 Katherine = BusinessContact(first_name='Katherine', last_name='Wade', phone_number= '+1 707-645-2247', email='daniel38@example.net', job='Personal assistant', company = 'Mikro Designs', business_phone= '+34 783 832 801')
 Susan = BusinessContact(first_name='Susan', last_name='Frank', phone_number= '+1 803-370-5903', email='kellygreen@example.net', job='Information systems manager', company = 'Practi-Plan', business_phone= '+34 622 795 400')
 Benjamin = BusinessContact(first_name='Benjamin', last_name='Peters', phone_number= '+1 503-435-8432', email='leejacob@example.org', job='Journalist, broadcasting', company = 'Consumers and Consumers Express', business_phone= '+34 640 183 391')
