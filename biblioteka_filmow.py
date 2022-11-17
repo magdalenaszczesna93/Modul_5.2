@@ -49,6 +49,13 @@ def search(title):
         if title == i.tytul:
             return i
 
+def generate_views(lista_all):
+    r= random.choice(lista_all)
+    i = random.choice(range(1,100))
+    r.liczba_odtworzen += i
+    return repr(r)
+
+
 movie1 = Film(tytul='Dogs', rok_wydania='1994', gatunek='komedia')
 movie2 = Film(tytul='Cats', rok_wydania='1995', gatunek='dokumentalny')
 movie3 = Film(tytul='Tiger', rok_wydania='1998', gatunek='biograficzny')
@@ -84,8 +91,5 @@ print(get_series(lista_all))
 
 print(search('Dogs'))
 print(search('Friends'))
-
-def generate_views(lista_all):
-    return random.choice(lista_all)
 
 print(generate_views(lista_all))
