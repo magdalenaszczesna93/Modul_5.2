@@ -61,11 +61,13 @@ def play_generate():
     for n in range(10):
         print(generate_views(lista_all)) 
 
-def top_titles(lista_all, n):
+def top_titles(lista_all, content_type, n):
     top = []
-    by_liczba_odtworzen = sorted(lista_all, key=lambda liczba:liczba.liczba_odtworzen, reverse = True)
-    top.append(by_liczba_odtworzen[:n])
-    return repr(top)
+    for i in lista_all:
+        if type(i) == content_type:
+            top.append(i)
+            by_liczba_odtworzen = sorted(top, key=lambda liczba:liczba.liczba_odtworzen, reverse = True)
+    return repr(by_liczba_odtworzen[:n])
 
 movie1 = Film(tytul='Dogs', rok_wydania='1994', gatunek='komedia')
 movie2 = Film(tytul='Cats', rok_wydania='1995', gatunek='dokumentalny')
@@ -105,5 +107,6 @@ print(search('Friends'))
 
 print(play_generate())
 
-print(top_titles(lista_all, 3))
+print(top_titles(lista_all, Film, 3))
+print(top_titles(lista_all, Serial, 3))
 
