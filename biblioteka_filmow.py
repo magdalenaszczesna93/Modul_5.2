@@ -51,7 +51,7 @@ def search(title):
 
 def generate_views(lista_all):
     r= random.choice(lista_all)
-    i = random.choice(range(1,100))
+    i = random.choice(range(1,101))
     r.liczba_odtworzen += i
     return repr(r)
 
@@ -92,4 +92,10 @@ print(get_series(lista_all))
 print(search('Dogs'))
 print(search('Friends'))
 
-print(generate_views(lista_all))
+# dlaczego na końcu daje "none"?
+# jak wrzucę wszystko do return zamiast print to zwróci mi tylko raz
+def play_generate():
+    for n in range(10):
+        print(generate_views(lista_all)) 
+
+print(play_generate())
