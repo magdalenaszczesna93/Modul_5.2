@@ -1,3 +1,5 @@
+import random
+
 class Film:
     def __init__ (self, tytul, rok_wydania, gatunek):
         self.tytul = tytul
@@ -82,3 +84,8 @@ print(get_series(lista_all))
 
 print(search('Dogs'))
 print(search('Friends'))
+
+def generate_views(lista_all):
+    return random.choice(lista_all)
+
+print(generate_views(lista_all))
