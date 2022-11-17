@@ -55,6 +55,17 @@ def generate_views(lista_all):
     r.liczba_odtworzen += i
     return repr(r)
 
+# dlaczego na końcu daje "none"?
+# jak wrzucę wszystko do return zamiast print to zwróci mi tylko raz
+def play_generate():
+    for n in range(10):
+        print(generate_views(lista_all)) 
+
+def top_titles(lista_all, n):
+    top = []
+    by_liczba_odtworzen = sorted(lista_all, key=lambda liczba:liczba.liczba_odtworzen, reverse = True)
+    top.append(by_liczba_odtworzen[:n])
+    return repr(top)
 
 movie1 = Film(tytul='Dogs', rok_wydania='1994', gatunek='komedia')
 movie2 = Film(tytul='Cats', rok_wydania='1995', gatunek='dokumentalny')
@@ -92,10 +103,7 @@ print(get_series(lista_all))
 print(search('Dogs'))
 print(search('Friends'))
 
-# dlaczego na końcu daje "none"?
-# jak wrzucę wszystko do return zamiast print to zwróci mi tylko raz
-def play_generate():
-    for n in range(10):
-        print(generate_views(lista_all)) 
-
 print(play_generate())
+
+print(top_titles(lista_all, 3))
+
